@@ -1,20 +1,28 @@
 import * as React from "react";
 import { render } from "react-dom";
 
-class App extends React.Component<{}, { clickCount: number }> {
-  state = { clickCount: 0 };
+import { observable, action } from "mobx";
+import { observer } from "mobx-react";
 
-  incrementCount = () =>
-    this.setState(prevState => {
-      console.log(`prevState`, prevState);
-      return { clickCount: prevState.clickCount + 1 };
-    });
+class HelloData {
+  @observable clickCount = 0;
+
+  @action
+  increment = () => {
+    console.log(`BE4 clickCount`, this.clickCount);
+    this.clickCount++;
+    console.log(`AFTER clickCount`, this.clickCount);
+  };
+}
+
+@observer
+class App extends React.Component<{}> {
+  data = new HelloData();
 
   render() {
-    const { clickCount } = this.state;
-    return (
-      <button onClick={() => this.incrementCount()}>Count: {clickCount}</button>
-    );
+    const { increment, clickCount } = this.data;
+
+    return <button onClick={increment}>Count: {clickCount}</button>;
   }
 }
 
