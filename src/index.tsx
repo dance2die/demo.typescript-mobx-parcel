@@ -5,7 +5,7 @@ import { observable, action, configure } from "mobx";
 import { observer } from "mobx-react";
 import MobxReactDevtools from "mobx-react-devtools";
 
-configure({ enforceActions: true });
+// configure({ enforceActions: true });
 
 class HelloData {
   @observable clickCount = 0;
