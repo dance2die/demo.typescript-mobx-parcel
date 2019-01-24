@@ -1,8 +1,11 @@
 import * as React from "react";
 import { render } from "react-dom";
 
-import { observable, action } from "mobx";
+import { observable, action, configure } from "mobx";
 import { observer } from "mobx-react";
+import MobxReactDevtools from "mobx-react-devtools";
+
+configure({ enforceActions: true });
 
 class HelloData {
   @observable clickCount = 0;
@@ -26,4 +29,10 @@ class App extends React.Component<{}> {
   }
 }
 
-render(<App />, document.getElementById("app"));
+render(
+  <>
+    <App />
+    <MobxReactDevtools />
+  </>,
+  document.getElementById("app")
+);
