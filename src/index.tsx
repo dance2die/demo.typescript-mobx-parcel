@@ -8,7 +8,7 @@ import MobxReactDevtools from "mobx-react-devtools";
 // configure({ enforceActions: true });
 
 class HelloData {
-  @observable clickCount = 0;
+  @observable clickCount = 2;
 
   @action
   increment = () => {
