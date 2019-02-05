@@ -5,8 +5,12 @@ import { observable, action, configure } from "mobx";
 import { observer } from "mobx-react";
 import MobxReactDevtools from "mobx-react-devtools";
 
+<<<<<<< HEAD
 import { appState } from "./appState";
 import { FieldInput } from "./field";
+=======
+configure({ enforceActions: "observed" });
+>>>>>>> d201f0af91655a5d42e2d3f1251408423eca7709
 
 configure({ enforceActions: "observed" });
 
