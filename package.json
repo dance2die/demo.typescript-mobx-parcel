@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "formstate": "^1.0.2",
     "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
     "mobx-react-devtools": "^6.0.3",
